@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <div id="demo"></div>
+
+</body>
+
+<script>
+    const data = {
+        "pages": [
+            {
+                "module_name": "Module 0",
+                "items": [
+                    {
+                        "item_name": "item 0",
+                        "item_type": "text",
+                        "anno": [
+                            {
+                                "value": "Item Anno 0",
+                                "group": 0
+                            }
+                        ]
+                    },
+                    {
+                        "item_name": "item 1",
+                        "item_type": "selection",
+                        "selection": [
+                            {
+                                "label": "selection a",
+                                "anno": [
+                                    {
+                                        "value": "Selection Anno 0",
+                                        "group": 0
+                                    }
+                                ]
+                            },
+                            {
+                                "label": "selection b",
+                                "anno": [
+                                    {
+                                        "value": "Selection Anno 0",
+                                        "group": 0
+                                    }
+                                ]
+                            },
+                            {
+                                "label": "selection v",
+                                "anno": [
+                                    {
+                                        "value": "Selection Anno 0",
+                                        "group": 0
+                                    }
+                                ]
+                            },
+                        ],
+                        "anno": [
+                            {
+                                "value": "Item Anno 1",
+                                "group": 0
+                            }
+                        ]
+                    }
+                ],
+                "anno": [
+                    {
+                        "value": "Anno 0",
+                        "group": 0
+                    }
+                ]
+            }
+        ]
+    };
+    let target = document.getElementById("demo");
+    data.pages.forEach(page => {
+        let pageNode = document.createElement("div");
+        let moduleNameNode = document.createElement("h1");
+        moduleNameNode.innerText = page.module_name;
+        pageNode.appendChild(moduleNameNode);
+        page.items.forEach(item => {
+            let itemNode = document.createElement("div");
+            itemNode.innerText = item.item_name;
+            pageNode.appendChild(itemNode);
+            if (item.selection) {
+                let list = document.createElement("ul");
+                item.selection.forEach(selection => {
+                    let selectionNode = document.createElement("li");
+                    selectionNode.innerText = selection.label;
+                    list.appendChild(selectionNode);
+                });
+                pageNode.appendChild(list);
+            }
+        });
+        target.appendChild(pageNode);
+    });
+</script>
+
+</html>

@@ -1,0 +1,48 @@
+{
+    "pages": [
+        {
+            "module_name": "Module 0",
+            "items": [
+                {
+                    "item_name": "item 0",
+                    "item_type": "text",
+                    "anno": [
+                        {
+                            "value": "Item Anno 0",
+                            "group": 0
+                        }
+                    ]
+                },
+                {
+                    "item_name": "item 1",
+                    "item_type": "selection",
+                    "selection": [
+                        {
+                            "label": "selection a",
+                            "anno": [
+                                {
+                                    "value": "Selection Anno 0",
+                                    "group": 0
+                                }
+                            ]
+                        },
+                        "selection b",
+                        "selection c"
+                    ],
+                    "anno": [
+                        {
+                            "value": "Item Anno 1",
+                            "group": 0
+                        }
+                    ]
+                }
+            ],
+            "anno": [
+                {
+                    "value": "Anno 0",
+                    "group": 0
+                }
+            ]
+        }
+    ]
+}
